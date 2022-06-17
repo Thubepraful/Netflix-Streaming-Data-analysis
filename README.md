@@ -1,5 +1,5 @@
 # Netflix-Streaming-Data-analysis
-- 
+ - This case study provides a overview of recommendation system analysis of data which provides suggestions to the user based on the global rating data.
 
 # Table of Content-:
 
@@ -12,67 +12,129 @@
 - Result
 
 
-# 1. Preview of File : https://drive.google.com/file/d/1FSj_aDyBofR1lKCtEptIE_jveOU0ZE31/view?usp=sharing\
+# 1. Preview of File : https://drive.google.com/file/d/1etuGaOpFMmrkpDeAzIwDEKonpwKBGHs3/view?usp=sharing
 
 # 2. Thoughts behind this case study : 
-  - As we know that when it comes to T20 cricket format, it is the most exiting one of them all, IPL Tournament is a contest one should not miss. As being a fan of team which represent my city, it was go to dataset for pulling exciting insights & information.
-
+  - I chose this case study to analyze and visualize how & on what data the recommendation system of streaming service provider Netflix operates, & pull out fancy recommendation based on my own analysis of data.
+ 
 # 3. Pandas Methods used :
   - .read_csv()
   - .head()
   - .info()
   - .isnull()
   - .sum()
+  - .mean()
+  - .median()
   - .drop(), .dropna()
+  - .raname()
+  - .set_index()
   - .value_counts()
   - .unique()
+  - .nunique()
+  - .nlargest()
   - .loc()
   - .plot()
   - .DataFrame()
   - .count()
   - .append()
-  - .idxmax()
   - .sort_values()
   - .groupby()
   - .get_group()
+  - len()
     - shape
 
 # 4. Numpy Methods used :
   - np.array()
 
-# 5. Graphs Used :
+# 5. Graphs Used 
+  - Lineplot
+  - Distplot (Histogram)
   - Bar plot
   - Count Plot
   - Pie Chart
+  - Heatmap
   
 # 6. Work Done :
-  - By using dropna method I have dropped rows with the Nan values in the dataset, and columns that were of no use to this analysis with drop method.
-  - By using value_counts I got name and the count of cities & matches it hosted, team and the toss or the matches it won, I've also used it in for plotting graphs.
-  - By using idxmax I got the highest value of the columns, to find unique values & to neglect the copies, I've used unique method.
-  - I used masking technique to know the information about tied matches.
-  - I used groupby where i need the reference of some other columns.
-  - I used countplot where the data is more and to visualize it properly.
-  - I used pie plots to show proportional distribution of values.
+
+  - Firstly I visualised the null values of columns, and accordingly filled null values of certificate column with NaN value as it had ratings for content & startYear column with mean year value by converting it to int datatype and dropped "episodes","endYear","plot" column which was no use to this analysis.
+  - Also filled some columns with their mean values which had some contribution to this analysis. 
+  - With nunique method I found out that isAdult column had only 0 in all the rows, so dropped it.
+  - I set popular rank as index and renamed it as Sr. no. column.
+  - As the dataset got ready for the analysis firstly I counted all types of content posted on netflix & visualised there proportion found out that there is one video game also posted on netflix.
+  - Then grouped the content according to their start year for furthen analysis
+  - After that I found out the top year for most content count per year and seggregated the sum as movies vs series.
+  - Then listed out the ratings content recieved.
+  -  Sorted the content according to langauges, contries that posted.
+  - I used masking technique to know the information from columns with conditions.
+  - At the end based on this analysis, I found out the top content to watch under numerous categories like country wise, genre wise, language wise, type wise etc.
 
 # 7.  Results :
-  - This **EDA** is mostly **Mumbai City** and it's team **Mumbai Indians** Centric as it has been most successful and one of the famous teams amoung IPL Teams
 
-  - 1. In all seasons of IPL, **Mumbai City** has hosted the *most matches* with the fact that it has altogether 3 venues,*Wankhede Stadium* being the most frequent match holding venue with 57 matches, then *Dr DY Patil Sports Academy* & at last *Brabourne Stadium*.
-  - 2. But if we consider a particular venue, "**M Chinnaswamy stadium**" of city "Banglore" has conducted most matches. 
-  - 3. For **60%** of the times matches played at venues in **Mumbai**, teams elected to **FIELD** *first*.
-  - 4. Also **Toss probability** & the *decision* to **field** on toss win has also gone *in favour* of the team plenty of times.
-  - 5. If we consider this above conditions, again **Mumbai Indians** have won more than *half of all the matches* that took place in **mumbai**, which means they have firm *grip on their home ground & it's playing conditions*.
-  - 6. If we look at the games of **Mumbai Indians**, in rivalry matches of "*Mumbai Indians" vs. "Chennai Super Kings*" team "**Mumbai Indians**" have won more times.
-  - 7. **Chris Gayle** or the "*The Universe Boss*", has won the "**Player of the match**" most times, and Hitman "**Rohit Sharma**" has won it most times for **Mumbai Indians**.
-  - 8. In **2013**, there were most matches of IPL were played, where **Mumbai Indians won** the season, **Chennai Super Kings** won a match without a loss of wicket, which was the **runner up** team for the season. 
-  - 9. Untill now **Mumbai Indians** have won the most matches.
+  - This dataset contains numerous **types** of contents including **Movies, Tv Series, Mini Series, Tv Episodes, Short Movies, Shorts (Short videos)** from which **Movies & TV Series** covers most of the content posted by **USA, UK, Japan, N. Korea, India** thusly **English, Japanese, Korean** language most.
+  - This dataset has almost **10% content rated 18 & 18+**, where other **30%** is **7-16+**.
+  - Most of the content is posted in recent 10 years but has average rating of 6.6-6.8 overall, this may be due to increase of content count.
+  - As the content count is only in range of 100 - 200 or below than that for **years before 2012**, **rating** mean is bit **high**. It is due to top content from the old times is only posted on the netflix.
+  - **2016** was **enriched** of **netflix content**, and also despite **Covid** pandemic situation **2020** was **2nd top** content posted year.
+  - As people tend to turn to these kind of plateforms for entertainment top two genre categories are **Comedy & Drama**, with average runtime of **1 hr 30 to 2 hrs**.
 
 # 8.  Conclusion :
 
-  - So if you are a fan of **Mumbai Indians Team**, there is more probability of you **celebrating the victory** of your favourite team, if the match is played at **"Wankhede Stadium"**, toss won by **Mumbai Indians** & they elect to **"Field" First**.
+ ### - If you're looking for content according to top genres of netflix:
+   
+   - for **Comedy** :
+        - 1) "Middleditch & Schwartz" : An audience tale of love, music festivals
+        - 2) "Seinfeld" 
+        - 3) "Monty Python's Flying Circus" : The cartoon series that Python language is named after by it's owner
+   
+   
+   - for **Drama** :
+        - 1) "Move to Heaven" 
+        - 2) "Nabillera"
+        - 3) "House of Cards"
+   
+   
+   - for **Action & Adventure**:
+        - 1) "Avatar: The Last Airbender"	
+        - 2) "Jujutsu Kaisen" : Anime
+   
+   
+   - for **Top rated TV-Series**:
+        - 1) "Ask the StoryBots"
+        - 2) "Breaking Bad"
+        - 3) "Stranger Things: Spotlight"
+        - 4) "Word of Honor"
+  
+  
+  - for **Top Movies**:
+       - 1) "David Attenborough: A Life on Our Planet" - *Documentary*
+       - 2) "The Lord of the Rings: The Return of the King"    
+            - (Tip : If you love this movie, it's other parts are also in top rated list)
+       - 3) "In Our Mothers' Gardens"
+    
+    
+   - for **Top TV Series**:
+        - 1) "Breaking Bad"
+        - 2) "Avatar: The Last Airbender"
+        - 3) "Rick and Morty"
+        
 
-  - Also in Season 2013 with this terms, Team **"Mumbai Indians"** won the season.
-
-  - So we can say that team **"Mumbai Indians"** has been the most **Successful team** in the IPL Cricket history.
-
-  - If they follow this agenda, then they can end up in top 4 teams for IPL Playoffs every year.
+   - for **Top Comedy Series**:
+        - 1) "Friends" : Personal Favourite
+        - 2) "Yeokdoyojeong Gim Bokju"
+        - 3) "How I Met Your Mother"
+        - 4) "Little Things"
+        
+        
+   - for **Comedy & Romantic**:
+        - 1) 'Venus on the Halfshell'
+        - 2) "Love per Square Foot"
+        - 3) "There's Something About Mary"
+        
+        
+   - **Top Indian Content**
+       - 1) Yeh Meri Family
+       - 2) College Romance
+       - 3) Sacred Games
+       
+       
+- Well this list can go endless based on the genre of one's precedence & their mixes. Don't bother to surf through netflix by yourself, you may find something exciting that is not listed here.
